@@ -54,7 +54,6 @@ export function AppSidebar({
     return (
         <Sidebar>
             <SidebarHeader>
-                <p>Zones</p>
             </SidebarHeader>
             <SidebarContent>
                 <SidebarGroup>
