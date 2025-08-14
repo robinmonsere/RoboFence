@@ -95,7 +95,7 @@ function MapComponent({checkedStates = {}}: MapComponentProps) {
         });
 
         return acc;
-    }, [geojson, checkedStates]);
+    }, [geojson, checkedStates, companyColors]);
 
     return (
         <div className="w-full h-screen">
@@ -106,7 +106,7 @@ function MapComponent({checkedStates = {}}: MapComponentProps) {
                     zoom: 8
                 }}
                 style={{width: '100%', height: '100%'}}
-                mapStyle="https://api.maptiler.com/maps/01988899-dc29-76ac-83bf-41c0d1bbffc2/style.json?key=hM0vJ75UdGixOAmu9lZa"
+                mapStyle={`https://api.maptiler.com/maps/01988899-dc29-76ac-83bf-41c0d1bbffc2/style.json?key=${import.meta.env.VITE_MAPTILER_API_KEY}`}
             >
                 {Object.entries(grouped).map(([company, { features, color }]) => {
                     if (features.length === 0) return null;
