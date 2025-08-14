@@ -111,7 +111,7 @@ function MapComponent({checkedStates = {}}: MapComponentProps) {
                 {Object.entries(grouped).map(([company, { features, color }]) => {
                     if (features.length === 0) return null;
 
-                    const data = { type: 'FeatureCollection', features };
+                    const data = { type: 'FeatureCollection' as const, features };
 
                     return (
                         <Source key={company} id={`${company.toLowerCase()}-source`} type="geojson" data={data}>
