@@ -1,0 +1,114 @@
+{
+  "companies": [
+    {
+      "name": "Tesla",
+      "zones": [
+        {
+          "name": "Austin",
+          "history": [
+            {
+              "name": "Austin August 3, 2025",
+              "id": "0E27867F0C39CD9226D9",
+              "date": "2025-08-03"
+            },
+            {
+              "name": "Austin July 14, 2025",
+              "id": "031C56119E393E30E353",
+              "date": "2025-07-14"
+            },
+            {
+              "name": "Austin June 22, 2025",
+              "id": "0778771FF038CE7D8C21",
+              "date": "2025-06-22"
+            }
+          ]
+        },
+        {
+          "name": "San Francisco",
+          "history": [
+            {
+              "name": "San Francisco July 31, 2025",
+              "id": "048C6B995339BB83770C",
+              "date": "2025-07-31"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Waymo",
+      "zones": [
+        {
+          "name": "Atlanta",
+          "history": [
+            {
+              "name": "Atlanta June 24, 2025",
+              "id": "071B24B6DF39BE2F2606",
+              "date": "2025-06-24"
+            }
+          ]
+        },
+        {
+          "name": "Austin",
+          "history": [
+            {
+              "name": "Austin July 17, 2025",
+              "id": "05D880578C394E745643",
+              "date": "2025-07-17"
+            },
+            {
+              "name": "Austin March 4, 2025",
+              "id": "0DD54A8F3038CE82AA70",
+              "date": "2025-03-04"
+            }
+          ]
+        },
+        {
+          "name": "Los Angeles",
+          "history": [
+            {
+              "name": "Los Angeles June 17, 2025",
+              "id": "077F0DC9BB3934869A60",
+              "date": "2025-06-17"
+            }
+          ]
+        },
+        {
+          "name": "Phoenix",
+          "history": [
+            {
+              "name": "Phoenix June 5, 2024",
+              "id": "0433C6467B39BB9C744E",
+              "date": "2024-06-05"
+            },
+            {
+              "name": "Phoenix July 5, 2023",
+              "id": "56BD7228AA000003",
+              "date": "2023-07-05"
+            }
+          ]
+        },
+        {
+          "name": "San Francisco",
+          "history": [
+            {
+              "name": "San Francisco July 17, 2025",
+              "id": "03AD9884A439BB69C7E4",
+              "date": "2025-07-17"
+            }
+          ]
+        },
+        {
+          "name": "Silicon Valley",
+          "history": [
+            {
+              "name": "Silicon Valley July 17, 2025",
+              "id": "0C4E59BC6739C4D581F8",
+              "date": "2025-07-17"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
