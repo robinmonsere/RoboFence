@@ -44,7 +44,7 @@ function MapComponent({checkedStates = {}}: MapComponentProps) {
 
     // Fetch GeoJSON file on mount
     useEffect(() => {
-        fetch('/src/assets/zones.geojson')
+        fetch('/zones.geojson')
             .then((res) => {
                 if (!res.ok) throw new Error('Network response was not ok');
                 return res.json();

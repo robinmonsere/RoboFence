@@ -76,7 +76,7 @@ async function main() {
     };
 
     // Write to zones.json
-    await Bun.write('src/assets/zones.json', JSON.stringify(output, null, 2));
+    await Bun.write('public/zones.json', JSON.stringify(output, null, 2));
     console.log("Generated zones.json successfully!");
 }
 
