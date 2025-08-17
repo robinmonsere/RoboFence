@@ -14,37 +14,20 @@ import {
 import { Checkbox } from "@/components/ui/checkbox.tsx"
 import { Label } from "@/components/ui/label.tsx";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible.tsx";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Locate } from "lucide-react";
 import type {Dispatch, SetStateAction} from "react";
-
-interface HistoryItem {
-    name: string;
-    id: string;
-    date: string;
-}
-
-interface Zone {
-    name: string;
-    history: HistoryItem[];
-}
-
-interface Company {
-    name: string;
-    zones: Zone[];
-}
-
-interface ZonesData {
-    companies: Company[];
-}
+import type {ZonesData} from '@/types.ts';
 
 export function AppSidebar({
    zones,
    checkedStates,
    setCheckedStates,
+   onZoneLocate,
 }: {
     zones: ZonesData;
     checkedStates: Record<string, boolean>;
     setCheckedStates: Dispatch<SetStateAction<Record<string, boolean>>>;
+    onZoneLocate: (lat: number, lng: number, zoom: number) => void;
 }) {
     // Helper to toggle a checkbox state
     const handleCheckedChange = (id: string, checked: boolean) => {
@@ -88,8 +71,17 @@ export function AppSidebar({
                                                         >
                                                             <CollapsibleTrigger asChild>
                                                                 <SidebarMenuSubButton asChild>
-                                                                    <div className="flex items-center space-x-2">
-                                                                        <span>{zone.name}</span>
+                                                                    <div className="group/locator flex items-center space-x-2">
+                                                                        <div className="flex items-center">
+                                                                            <span className="test">{zone.name}</span>
+                                                                            <Locate
+                                                                                className="ml-3 cursor-pointer size-4 hidden group-hover/locator:block"
+                                                                                onClick={(e) => {
+                                                                                    onZoneLocate(zone.lat, zone.lng, zone.zoom);
+                                                                                    e.preventDefault();
+                                                                                }}
+                                                                            />
+                                                                        </div>
                                                                         <ChevronRight
                                                                             className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible-sub:rotate-90"
                                                                         />

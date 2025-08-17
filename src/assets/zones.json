@@ -5,6 +5,9 @@
       "zones": [
         {
           "name": "Austin",
+          "lat": 30.263455,
+          "lng": -97.742979,
+          "zoom": 10,
           "history": [
             {
               "name": "Austin August 3, 2025",
@@ -25,6 +28,9 @@
         },
         {
           "name": "San Francisco",
+          "lat": 37.602557,
+          "lng": -122.1321,
+          "zoom": 9,
           "history": [
             {
               "name": "San Francisco July 31, 2025",
@@ -40,6 +46,9 @@
       "zones": [
         {
           "name": "Atlanta",
+          "lat": 33.7490,
+          "lng": -84.3880,
+          "zoom": 10,
           "history": [
             {
               "name": "Atlanta June 24, 2025",
@@ -50,6 +59,9 @@
         },
         {
           "name": "Austin",
+          "lat": 30.263455,
+          "lng": -97.742979,
+          "zoom": 10,
           "history": [
             {
               "name": "Austin July 17, 2025",
@@ -65,6 +77,9 @@
         },
         {
           "name": "Los Angeles",
+          "lat": 34.0522,
+          "lng": -118.2437,
+          "zoom": 10,
           "history": [
             {
               "name": "Los Angeles June 17, 2025",
@@ -75,6 +90,9 @@
         },
         {
           "name": "Phoenix",
+          "lat": 33.4484,
+          "lng": -112.0740,
+          "zoom": 10,
           "history": [
             {
               "name": "Phoenix June 5, 2024",
@@ -90,6 +108,9 @@
         },
         {
           "name": "San Francisco",
+          "lat": 37.738557,
+          "lng": -122.41720,
+          "zoom": 9,
           "history": [
             {
               "name": "San Francisco July 17, 2025",
@@ -100,6 +121,9 @@
         },
         {
           "name": "Silicon Valley",
+          "lat": 37.3875,
+          "lng": -122.0575,
+          "zoom": 9,
           "history": [
             {
               "name": "Silicon Valley July 17, 2025",

@@ -3,27 +3,8 @@ import MapComponent from './components/Map.tsx';
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar.tsx';
 import { AppSidebar } from '@/components/AppSidebar.tsx';
 import zonesData from './assets/zones.json';  // Direct import of JSON as object
-import { useState } from 'react';
-
-interface HistoryItem {
-    name: string;
-    id: string;
-    date: string;
-}
-
-interface Zone {
-    name: string;
-    history: HistoryItem[];
-}
-
-interface Company {
-    name: string;
-    zones: Zone[];
-}
-
-interface ZonesData {
-    companies: Company[];
-}
+import { useState, useRef } from 'react';
+import type { ZonesData } from '@/types.ts';
 
 function App() {
     // Lifted state for checkbox checked statuses
@@ -40,19 +21,28 @@ function App() {
         return initial;
     });
 
+    const mapRef = useRef<{ flyTo: (lat: number, lng: number, zoom: number) => void }>(null);
+
+    const handleZoneLocate = (lat: number, lng: number, zoom: number) => {
+        if (mapRef.current) {
+            mapRef.current.flyTo(lat, lng, zoom);
+        }
+    };
+
     return (
         <SidebarProvider>
             <AppSidebar
-                zones={zonesData}
+                zones={zonesData as ZonesData}
                 checkedStates={checkedStates}
                 setCheckedStates={setCheckedStates}
+                onZoneLocate={handleZoneLocate}
             />
             <main className="relative h-screen w-screen">
                 <div className="absolute top-4 left-4 z-30">
                     <SidebarTrigger id="sidebarTrigger" />
                 </div>
                 <div className="map absolute inset-0 z-10">
-                    <MapComponent checkedStates={checkedStates} />  {/* Pass checkedStates to MapComponent */}
+                    <MapComponent ref={mapRef} checkedStates={checkedStates} />  {/* Pass checkedStates to MapComponent */}
                 </div>
             </main>
         </SidebarProvider>

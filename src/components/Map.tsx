@@ -1,7 +1,7 @@
 // Using Maplibre
 import Map, {Source, Layer} from 'react-map-gl/maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import {useEffect, useMemo, useState} from "react";
+import {useEffect, useMemo, useState, forwardRef, useImperativeHandle, useRef} from "react";
 
 interface MapComponentProps {
     checkedStates?: Record<string, boolean>
@@ -33,7 +33,7 @@ interface GeoJson {
     features: GeoJsonFeature[];
 }
 
-function MapComponent({checkedStates = {}}: MapComponentProps) {
+const MapComponent = forwardRef(({checkedStates = {}}: MapComponentProps, ref) => {
     const [geojson, setGeojson] = useState<GeoJson | null>(null);
 
     const companyColors: Record<string, string> = {
@@ -41,6 +41,16 @@ function MapComponent({checkedStates = {}}: MapComponentProps) {
         'Waymo': '#01eba7',
         // Add more companies as needed
     };
+
+    // Expose flyTo method via ref
+    const mapRef = useRef<any>(null);
+    useImperativeHandle(ref, () => ({
+        flyTo: (lat: number, lng: number, zoom: number) => {
+            if (mapRef.current) {
+                mapRef.current.flyTo({ center: [lng, lat], zoom });
+            }
+        }
+    }));
 
     // Fetch GeoJSON file on mount
     useEffect(() => {
@@ -100,6 +110,7 @@ function MapComponent({checkedStates = {}}: MapComponentProps) {
     return (
         <div className="w-full h-screen">
             <Map
+                ref={mapRef}
                 initialViewState={{
                     longitude: -97.73,
                     latitude: 30.266,
@@ -129,6 +140,6 @@ function MapComponent({checkedStates = {}}: MapComponentProps) {
             </Map>
         </div>
     );
-}
+});
 
 export default MapComponent;
