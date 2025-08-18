@@ -1,37 +1,10 @@
 // Using Maplibre
-import Map, {Source, Layer} from 'react-map-gl/maplibre';
+import Map, {Source, Layer, AttributionControl } from 'react-map-gl/maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import {useEffect, useMemo, useState, forwardRef, useImperativeHandle, useRef} from "react";
+import type {GeoJson, GeoJsonFeature, MapComponentProps} from "@/types.ts";
 
-interface MapComponentProps {
-    checkedStates?: Record<string, boolean>
-}
 
-interface GeoJsonProperties {
-    name: string;
-    styleUrl?: string;
-    styleMapHash?: {
-        normal: string;
-        highlight: string;
-    };
-}
-
-interface GeoJsonGeometry {
-    type: 'Polygon';
-    coordinates: number[][][];
-}
-
-interface GeoJsonFeature {
-    type: 'Feature';
-    geometry: GeoJsonGeometry;
-    properties: GeoJsonProperties;
-    id: string;
-}
-
-interface GeoJson {
-    type: 'FeatureCollection';
-    features: GeoJsonFeature[];
-}
 
 const MapComponent = forwardRef(({checkedStates = {}}: MapComponentProps, ref) => {
     const [geojson, setGeojson] = useState<GeoJson | null>(null);
@@ -117,6 +90,7 @@ const MapComponent = forwardRef(({checkedStates = {}}: MapComponentProps, ref) =
                     zoom: 8
                 }}
                 style={{width: '100%', height: '100%'}}
+                attributionControl={false}
                 mapStyle={`https://api.maptiler.com/maps/01988899-dc29-76ac-83bf-41c0d1bbffc2/style.json?key=${import.meta.env.VITE_MAPTILER_API_KEY}`}
             >
                 {Object.entries(grouped).map(([company, { features, color }]) => {
@@ -137,6 +111,13 @@ const MapComponent = forwardRef(({checkedStates = {}}: MapComponentProps, ref) =
                         </Source>
                     );
                 })}
+                <AttributionControl style={{
+                    backgroundColor: '#FFFFFF',
+                    color: 'rgba(0, 0, 0, .75)',
+                    padding: '2px 28px 2px 8px',
+                    borderRadius: '25px',
+                    margin: '10px',
+                }} customAttribution='<span style="font-weight: bold;">Created and maintained by <a href="https://x.com/xdnibor" target="_blank">@xdnibor</a></span>'  />
             </Map>
         </div>
     );

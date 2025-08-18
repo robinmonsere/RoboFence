@@ -20,3 +20,33 @@ export interface Company {
 export interface ZonesData {
     companies: Company[];
 }
+
+export interface MapComponentProps {
+    checkedStates?: Record<string, boolean>
+}
+
+interface GeoJsonProperties {
+    name: string;
+    styleUrl?: string;
+    styleMapHash?: {
+        normal: string;
+        highlight: string;
+    };
+}
+
+interface GeoJsonGeometry {
+    type: 'Polygon';
+    coordinates: number[][][];
+}
+
+export interface GeoJsonFeature {
+    type: 'Feature';
+    geometry: GeoJsonGeometry;
+    properties: GeoJsonProperties;
+    id: string;
+}
+
+export interface GeoJson {
+    type: 'FeatureCollection';
+    features: GeoJsonFeature[];
+}
