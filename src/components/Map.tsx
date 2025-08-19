@@ -1,18 +1,16 @@
-// Using Maplibre
-import Map, {Source, Layer, AttributionControl } from 'react-map-gl/maplibre';
+import Map, {Source, Layer, AttributionControl, Popup } from 'react-map-gl/maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import {useEffect, useMemo, useState, forwardRef, useImperativeHandle, useRef} from "react";
+import {useEffect, useMemo, useState, forwardRef, useImperativeHandle, useRef, useCallback} from "react";
 import type {GeoJson, GeoJsonFeature, MapComponentProps} from "@/types.ts";
-
-
 
 const MapComponent = forwardRef(({checkedStates = {}}: MapComponentProps, ref) => {
     const [geojson, setGeojson] = useState<GeoJson | null>(null);
+    const [popupInfo, setPopupInfo] = useState<{ lngLat: {lng: number, lat: number}, feature: GeoJsonFeature } | null>(null);
+    const [selectedId, setSelectedId] = useState<string | null>(null);
 
     const companyColors: Record<string, string> = {
         'Tesla': '#E31937',
         'Waymo': '#01eba7',
-        // Add more companies as needed
     };
 
     // Expose flyTo method via ref
@@ -80,6 +78,22 @@ const MapComponent = forwardRef(({checkedStates = {}}: MapComponentProps, ref) =
         return acc;
     }, [geojson, checkedStates, companyColors]);
 
+
+    const interactiveLayerIds = useMemo(() => Object.keys(grouped).map(company => `${company.toLowerCase()}-layer`), [grouped]);
+
+    const handleMapClick = (e: any) => {
+        console.log('e', e);
+        if (e.features && e.features.length > 0) {
+            const feature = e.features[0];
+            setPopupInfo({ lngLat: e.lngLat, feature });
+            setSelectedId(feature.id);
+            console.log(feature.id)
+        } else {
+            setPopupInfo(null);
+            setSelectedId(null);
+        }
+    };
+
     return (
         <div className="w-full h-screen">
             <Map
@@ -89,8 +103,11 @@ const MapComponent = forwardRef(({checkedStates = {}}: MapComponentProps, ref) =
                     latitude: 30.266,
                     zoom: 8
                 }}
+                onClick={handleMapClick}
                 style={{width: '100%', height: '100%'}}
                 attributionControl={false}
+                interactiveLayerIds={interactiveLayerIds}
+                geolocateControl={true}
                 mapStyle={`https://api.maptiler.com/maps/01988899-dc29-76ac-83bf-41c0d1bbffc2/style.json?key=${import.meta.env.VITE_MAPTILER_API_KEY}`}
             >
                 {Object.entries(grouped).map(([company, { features, color }]) => {
@@ -108,9 +125,55 @@ const MapComponent = forwardRef(({checkedStates = {}}: MapComponentProps, ref) =
                                     'fill-opacity': 0.5,
                                 }}
                             />
+                            <Layer
+                                id={`${company.toLowerCase()}-outline-layer`}
+                                type="line"
+                                paint={{
+                                    'line-color': color,
+                                    'line-width': 2,
+                                    'line-opacity': 0.8,
+                                }}
+                            />
+                            <Layer
+                                id={`${company.toLowerCase()}-highlight`}
+                                type="line"
+                                paint={{
+                                    'line-color': color,
+                                    'line-width': 3,
+                                    'line-opacity': 1,
+                                }}
+                                filter={['==', ['id'], selectedId || '']}
+                            />
                         </Source>
                     );
                 })}
+                {popupInfo && (
+                    <Popup
+                        longitude={popupInfo.lngLat.lng}
+                        latitude={popupInfo.lngLat.lat}
+                        closeOnClick={false}
+                        onClose={() => {
+                            setPopupInfo(null);
+                            setSelectedId(null);
+                        }}
+                    >
+                        {(() => {
+                            const name = popupInfo.feature.properties.name;
+                            const parts = name.split(' - ').map((s: string) => s.trim());
+                            const [comp, zone, date] = parts;
+                            const content = `
+                                <div style="padding: 8px; background: black; border-radius: 4px;">
+                                    <h3 style="margin: 0 0 4px; font-size: 14px; font-weight: bold;">${zone}</h3>
+                                    <p style="margin: 0; font-size: 12px;">Company: ${comp}</p>
+                                    <p style="margin: 0; font-size: 12px;">Date: ${date}</p>
+                                </div>
+                            `;
+                            return <div>
+                                <p>test</p>
+                            </div>;
+                        })()}
+                    </Popup>
+                )}
                 <AttributionControl style={{
                     backgroundColor: '#FFFFFF',
                     color: 'rgba(0, 0, 0, .75)',
