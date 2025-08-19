@@ -4,6 +4,9 @@ interface HistoryItem {
     name: string;
     id: string;
     date: string;
+    status: string;
+    type: string;
+    area: string;
 }
 
 interface Zone {
@@ -21,8 +24,16 @@ interface ZonesData {
 }
 
 async function main() {
+    console.log("Generating zones.json from zones.geojson...");
     // Read the geojson file
-    const geojson = await Bun.file('src/assets/zones.geojson').json();
+    const geojson = await Bun.file('public/zones.geojson').json()
+
+    if (!geojson || !geojson.features) {
+        throw new Error("Invalid GeoJSON data");
+    } else {
+        console.log(`Found ${geojson.features.length} features in zones.geojson`);
+    }
+
     const features = geojson.features;  // Assuming it's a FeatureCollection
 
     const companies: Record<string, Record<string, { history: HistoryItem[] }>> = {};
@@ -53,10 +64,46 @@ async function main() {
         const historyDate = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
         const id = feature.id;
 
+        let status = '';
+        let type = '';
+        let area = '';
+
+        if (feature.properties.description) {
+            let description = feature.properties.description;
+            // Replace <br> with \n
+            description = description.replace(/<br\s*\/?>|<\/?br>/gi, '\n');
+            // Strip HTML tags
+            description = description.replace(/<[^>]+>/g, '').trim();
+            // Split into lines
+            const lines = description.split('\n').map((line: string) => line.trim()).filter((line: string) => line);
+
+            const data: Record<string, string> = {};
+            for (const line of lines) {
+                if (line.includes(':')) {
+                    console.log(`Processing line: ${line}`);
+                    const [key, value] = line.split(':').map((s: string) => s.trim());
+                    console.log(`Key: ${key}, Value: ${value}`);
+                    const normalizedKey = key.toLowerCase().replace(/\s+/g, '_');
+                    data[normalizedKey] = value;
+                }
+            }
+
+            status = data['status'] || '';
+            type = data['type'] || '';
+            area = data['area'] || '';
+            console.log(data)
+        }
+
+        console.log(`Processing: ${company} - ${zone} - ${historyName} (${historyDate})`);
+        console.log(`ID: ${id}, Status: ${status}, Type: ${type}, Area: ${area}`);
+
         companies[company][zone].history.push({
             name: historyName,
             id,
-            date: historyDate
+            date: historyDate,
+            status,
+            type,
+            area
         });
     }
 

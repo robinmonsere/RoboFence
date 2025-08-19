@@ -1,12 +1,12 @@
 import Map, {Source, Layer, AttributionControl, Popup } from 'react-map-gl/maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import {useEffect, useMemo, useState, forwardRef, useImperativeHandle, useRef, useCallback} from "react";
+import {useEffect, useMemo, useState, forwardRef, useImperativeHandle, useRef} from "react";
 import type {GeoJson, GeoJsonFeature, MapComponentProps} from "@/types.ts";
 
 const MapComponent = forwardRef(({checkedStates = {}}: MapComponentProps, ref) => {
     const [geojson, setGeojson] = useState<GeoJson | null>(null);
     const [popupInfo, setPopupInfo] = useState<{ lngLat: {lng: number, lat: number}, feature: GeoJsonFeature } | null>(null);
-    const [selectedId, setSelectedId] = useState<string | null>(null);
+    const [selectedName, setSelectedName] = useState<string | null>(null);
 
     const companyColors: Record<string, string> = {
         'Tesla': '#E31937',
@@ -86,11 +86,12 @@ const MapComponent = forwardRef(({checkedStates = {}}: MapComponentProps, ref) =
         if (e.features && e.features.length > 0) {
             const feature = e.features[0];
             setPopupInfo({ lngLat: e.lngLat, feature });
-            setSelectedId(feature.id);
-            console.log(feature.id)
+            setSelectedName(feature.properties.name);
+            console.log('Feature clicked:', feature);
+            console.log(feature.properties.name)
         } else {
             setPopupInfo(null);
-            setSelectedId(null);
+            setSelectedName(null);
         }
     };
 
@@ -142,7 +143,7 @@ const MapComponent = forwardRef(({checkedStates = {}}: MapComponentProps, ref) =
                                     'line-width': 3,
                                     'line-opacity': 1,
                                 }}
-                                filter={['==', ['id'], selectedId || '']}
+                                filter={['==', ['get', 'name'], selectedName || '']}
                             />
                         </Source>
                     );
@@ -154,23 +155,21 @@ const MapComponent = forwardRef(({checkedStates = {}}: MapComponentProps, ref) =
                         closeOnClick={false}
                         onClose={() => {
                             setPopupInfo(null);
-                            setSelectedId(null);
                         }}
                     >
                         {(() => {
                             const name = popupInfo.feature.properties.name;
                             const parts = name.split(' - ').map((s: string) => s.trim());
                             const [comp, zone, date] = parts;
-                            const content = `
-                                <div style="padding: 8px; background: black; border-radius: 4px;">
-                                    <h3 style="margin: 0 0 4px; font-size: 14px; font-weight: bold;">${zone}</h3>
-                                    <p style="margin: 0; font-size: 12px;">Company: ${comp}</p>
-                                    <p style="margin: 0; font-size: 12px;">Date: ${date}</p>
+                            return (
+                                <div className="">
+
+                                    <h3 className="margin: 0 0 4px; font-size: 14px; font-weight: bold;">{zone}</h3>
+                                    <p>Company: {comp}</p>
+                                    <p>Start date: {date}</p>
                                 </div>
-                            `;
-                            return <div>
-                                <p>test</p>
-                            </div>;
+
+                            )
                         })()}
                     </Popup>
                 )}

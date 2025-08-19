@@ -8,4 +8,18 @@
     width: 100%;
 }
 
+.maplibregl-popup-content {
+    background-color: var(--sidebar) !important;
+    color: var(--sidebar-foreground) !important;
+    border-radius: 8px !important;
+}
+
+.maplibregl-popup-tip {
+    border-top-color: var(--sidebar) !important;
+}
+
+.maplibregl-popup-close-button {
+    padding: 5px 10px 0 0;
+    font-size: 18px;
+}
 

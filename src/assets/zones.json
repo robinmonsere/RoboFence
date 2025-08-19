@@ -12,17 +12,26 @@
             {
               "name": "Austin August 3, 2025",
               "id": "0E27867F0C39CD9226D9",
-              "date": "2025-08-03"
+              "date": "2025-08-03",
+              "status": "",
+              "type": "",
+              "size": ""
             },
             {
               "name": "Austin July 14, 2025",
               "id": "031C56119E393E30E353",
-              "date": "2025-07-14"
+              "date": "2025-07-14",
+              "status": "",
+              "type": "",
+              "size": ""
             },
             {
               "name": "Austin June 22, 2025",
               "id": "0778771FF038CE7D8C21",
-              "date": "2025-06-22"
+              "date": "2025-06-22",
+              "status": "",
+              "type": "",
+              "size": ""
             }
           ]
         },
