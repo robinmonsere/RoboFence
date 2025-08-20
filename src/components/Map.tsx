@@ -109,7 +109,6 @@ const MapComponent = forwardRef(({checkedStates = {}}: MapComponentProps, ref) =
                 style={{width: '100%', height: '100%'}}
                 attributionControl={false}
                 interactiveLayerIds={interactiveLayerIds}
-                geolocateControl={true}
                 mapStyle={`https://api.maptiler.com/maps/01988899-dc29-76ac-83bf-41c0d1bbffc2/style.json?key=${import.meta.env.VITE_MAPTILER_API_KEY}`}
             >
                 {Object.entries(grouped).map(([company, { features, color }]) => {
