@@ -1,10 +1,11 @@
-import './App.css';
-import MapComponent from './components/Map.tsx';
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar.tsx';
 import { AppSidebar } from '@/components/AppSidebar.tsx';
-import zonesData from './assets/zones.json';  // Direct import of JSON as object
-import { useState, useRef } from 'react';
+import { Analytics } from "@vercel/analytics/react";
+import MapComponent from './components/Map.tsx';
+import zonesData from './assets/zones.json';
 import type { ZonesData } from '@/types.ts';
+import { useState, useRef } from 'react';
+import './App.css';
 
 function App() {
     // Lifted state for checkbox checked statuses
@@ -45,6 +46,7 @@ function App() {
                     <MapComponent ref={mapRef} checkedStates={checkedStates} />  {/* Pass checkedStates to MapComponent */}
                 </div>
             </main>
+            <Analytics />
         </SidebarProvider>
     );
 }
