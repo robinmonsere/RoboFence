@@ -11,6 +11,9 @@ interface HistoryItem {
 
 interface Zone {
     name: string;
+    lat: number;
+    lng: number;
+    zoom: number;
     history: HistoryItem[];
 }
 
@@ -21,6 +24,53 @@ interface Company {
 
 interface ZonesData {
     companies: Company[];
+}
+
+const coords = {
+    Tesla: {
+        Austin: {
+            lat: 30.26345,
+            lng: -97.7431,
+            zoom: 10
+        },
+        San_Francisco: {
+            lat: 37.60255,
+            lng: -122.1321,
+            zoom: 9
+        }
+    },
+    Waymo: {
+        Atlanta: {
+            lat: 33.7490,
+            lng: -84.3880,
+            zoom: 10
+        },
+        Phoenix: {
+            lat: 33.4484,
+            lng: -112.0740,
+            zoom: 10
+        },
+        San_Francisco: {
+            lat: 37.73855,
+            lng: -122.41720,
+            zoom: 9
+        },
+        Austin: {
+            lat: 30.26345,
+            lng: -97.74297,
+            zoom: 10
+        },
+        Los_Angeles: {
+            lat: 34.0522,
+            lng: -118.2437,
+            zoom: 10
+        },
+        Silicon_Valley: {
+            lat: 37.3875,
+            lng: -122.0575,
+            zoom: 10
+        }
+    }
 }
 
 async function main() {
@@ -70,19 +120,14 @@ async function main() {
 
         if (feature.properties.description) {
             let description = feature.properties.description;
-            // Replace <br> with \n
             description = description.replace(/<br\s*\/?>|<\/?br>/gi, '\n');
-            // Strip HTML tags
             description = description.replace(/<[^>]+>/g, '').trim();
-            // Split into lines
             const lines = description.split('\n').map((line: string) => line.trim()).filter((line: string) => line);
 
             const data: Record<string, string> = {};
             for (const line of lines) {
                 if (line.includes(':')) {
-                    console.log(`Processing line: ${line}`);
                     const [key, value] = line.split(':').map((s: string) => s.trim());
-                    console.log(`Key: ${key}, Value: ${value}`);
                     const normalizedKey = key.toLowerCase().replace(/\s+/g, '_');
                     data[normalizedKey] = value;
                 }
@@ -91,11 +136,7 @@ async function main() {
             status = data['status'] || '';
             type = data['type'] || '';
             area = data['area'] || '';
-            console.log(data)
         }
-
-        console.log(`Processing: ${company} - ${zone} - ${historyName} (${historyDate})`);
-        console.log(`ID: ${id}, Status: ${status}, Type: ${type}, Area: ${area}`);
 
         companies[company][zone].history.push({
             name: historyName,
@@ -117,13 +158,16 @@ async function main() {
                     .sort(([a], [b]) => a.localeCompare(b))  // Optional: sort zones alphabetically
                     .map(([zname, { history }]) => ({
                         name: zname,
+                        lat: coords[name]?.[zname.replace(/ /g, '_')]?.lat || 0,
+                        lng: coords[name]?.[zname.replace(/ /g, '_')]?.lng || 0,
+                        zoom: coords[name]?.[zname.replace(/ /g, '_')]?.zoom || 8,
                         history: history.sort((a, b) => b.date.localeCompare(a.date))  // Optional: sort history by date
                     }))
             }))
     };
 
     // Write to zones.json
-    await Bun.write('public/zones.json', JSON.stringify(output, null, 2));
+    await Bun.write('src/assets/zones.json', JSON.stringify(output, null, 2));
     console.log("Generated zones.json successfully!");
 }
 

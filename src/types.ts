@@ -32,6 +32,8 @@ interface GeoJsonProperties {
         normal: string;
         highlight: string;
     };
+    description?: string;
+    visibility?: string;
 }
 
 interface GeoJsonGeometry {

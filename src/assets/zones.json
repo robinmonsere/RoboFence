@@ -5,46 +5,49 @@
       "zones": [
         {
           "name": "Austin",
-          "lat": 30.263455,
-          "lng": -97.742979,
+          "lat": 30.26345,
+          "lng": -97.7431,
           "zoom": 10,
           "history": [
             {
               "name": "Austin August 3, 2025",
               "id": "0E27867F0C39CD9226D9",
               "date": "2025-08-03",
-              "status": "",
-              "type": "",
-              "size": ""
+              "status": "Active",
+              "type": "Invite only",
+              "area": "90 mi²"
             },
             {
               "name": "Austin July 14, 2025",
               "id": "031C56119E393E30E353",
               "date": "2025-07-14",
-              "status": "",
-              "type": "",
-              "size": ""
+              "status": "Inactive",
+              "type": "Invite only",
+              "area": "41.76 mi²"
             },
             {
               "name": "Austin June 22, 2025",
               "id": "0778771FF038CE7D8C21",
               "date": "2025-06-22",
-              "status": "",
-              "type": "",
-              "size": ""
+              "status": "Inactive",
+              "type": "Invite only",
+              "area": "18.27 mi²"
             }
           ]
         },
         {
           "name": "San Francisco",
-          "lat": 37.602557,
+          "lat": 37.60255,
           "lng": -122.1321,
           "zoom": 9,
           "history": [
             {
               "name": "San Francisco July 31, 2025",
               "id": "048C6B995339BB83770C",
-              "date": "2025-07-31"
+              "date": "2025-07-31",
+              "status": "Active",
+              "type": "Invite only",
+              "area": "995.15 mi²"
             }
           ]
         }
@@ -55,32 +58,41 @@
       "zones": [
         {
           "name": "Atlanta",
-          "lat": 33.7490,
-          "lng": -84.3880,
+          "lat": 33.749,
+          "lng": -84.388,
           "zoom": 10,
           "history": [
             {
               "name": "Atlanta June 24, 2025",
               "id": "071B24B6DF39BE2F2606",
-              "date": "2025-06-24"
+              "date": "2025-06-24",
+              "status": "Active",
+              "type": "Open (Uber)",
+              "area": "&nbsp;61.18 mi²"
             }
           ]
         },
         {
           "name": "Austin",
-          "lat": 30.263455,
-          "lng": -97.742979,
+          "lat": 30.26345,
+          "lng": -97.74297,
           "zoom": 10,
           "history": [
             {
               "name": "Austin July 17, 2025",
               "id": "05D880578C394E745643",
-              "date": "2025-07-17"
+              "date": "2025-07-17",
+              "status": "Active",
+              "type": "Open (Uber)",
+              "area": "88.58 mi²"
             },
             {
               "name": "Austin March 4, 2025",
               "id": "0DD54A8F3038CE82AA70",
-              "date": "2025-03-04"
+              "date": "2025-03-04",
+              "status": "Inactive",
+              "type": "Open (Uber)",
+              "area": "35.34 mi²"
             }
           ]
         },
@@ -93,38 +105,50 @@
             {
               "name": "Los Angeles June 17, 2025",
               "id": "077F0DC9BB3934869A60",
-              "date": "2025-06-17"
+              "date": "2025-06-17",
+              "status": "Active",
+              "type": "Open",
+              "area": "122.34 mi²"
             }
           ]
         },
         {
           "name": "Phoenix",
           "lat": 33.4484,
-          "lng": -112.0740,
+          "lng": -112.074,
           "zoom": 10,
           "history": [
             {
               "name": "Phoenix June 5, 2024",
               "id": "0433C6467B39BB9C744E",
-              "date": "2024-06-05"
+              "date": "2024-06-05",
+              "status": "Active",
+              "type": "Invite",
+              "area": "301.67 mi²"
             },
             {
               "name": "Phoenix July 5, 2023",
               "id": "56BD7228AA000003",
-              "date": "2023-07-05"
+              "date": "2023-07-05",
+              "status": "Inactive",
+              "type": "Invite",
+              "area": "216.56 mi²"
             }
           ]
         },
         {
           "name": "San Francisco",
-          "lat": 37.738557,
-          "lng": -122.41720,
+          "lat": 37.73855,
+          "lng": -122.4172,
           "zoom": 9,
           "history": [
             {
               "name": "San Francisco July 17, 2025",
               "id": "03AD9884A439BB69C7E4",
-              "date": "2025-07-17"
+              "date": "2025-07-17",
+              "status": "Active",
+              "type": "Open",
+              "area": "81.33 mi²"
             }
           ]
         },
@@ -132,12 +156,15 @@
           "name": "Silicon Valley",
           "lat": 37.3875,
           "lng": -122.0575,
-          "zoom": 9,
+          "zoom": 10,
           "history": [
             {
               "name": "Silicon Valley July 17, 2025",
               "id": "0C4E59BC6739C4D581F8",
-              "date": "2025-07-17"
+              "date": "2025-07-17",
+              "status": "Active",
+              "type": "Invite",
+              "area": "51.45 mi²"
             }
           ]
         }

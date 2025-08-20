@@ -85,10 +85,11 @@ const MapComponent = forwardRef(({checkedStates = {}}: MapComponentProps, ref) =
         console.log('e', e);
         if (e.features && e.features.length > 0) {
             const feature = e.features[0];
-            setPopupInfo({ lngLat: e.lngLat, feature });
+            setPopupInfo({ 
+                lngLat: e.lngLat,
+                feature 
+            });
             setSelectedName(feature.properties.name);
-            console.log('Feature clicked:', feature);
-            console.log(feature.properties.name)
         } else {
             setPopupInfo(null);
             setSelectedName(null);
@@ -158,17 +159,9 @@ const MapComponent = forwardRef(({checkedStates = {}}: MapComponentProps, ref) =
                         }}
                     >
                         {(() => {
-                            const name = popupInfo.feature.properties.name;
-                            const parts = name.split(' - ').map((s: string) => s.trim());
-                            const [comp, zone, date] = parts;
+                            const description = popupInfo.feature.properties.description || '';
                             return (
-                                <div className="">
-
-                                    <h3 className="margin: 0 0 4px; font-size: 14px; font-weight: bold;">{zone}</h3>
-                                    <p>Company: {comp}</p>
-                                    <p>Start date: {date}</p>
-                                </div>
-
+                                <div dangerouslySetInnerHTML={{__html: description}}/>
                             )
                         })()}
                     </Popup>

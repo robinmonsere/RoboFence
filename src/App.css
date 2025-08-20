@@ -12,6 +12,8 @@
     background-color: var(--sidebar) !important;
     color: var(--sidebar-foreground) !important;
     border-radius: 8px !important;
+    padding: 20px !important;
+    font-size: 14px;
 }
 
 .maplibregl-popup-tip {
