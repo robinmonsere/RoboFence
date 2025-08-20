@@ -133,6 +133,12 @@ export function AppSidebar({
                         })}
                     </SidebarMenu>
                 </SidebarGroup>
+                <SidebarGroup className="mt-auto">
+                    <div className="mx-5 flex flex-row items-end justify-between">
+                        <a className="text-3xl" target="_blank" href="https://x.com/xdnibor">𝕏</a>
+                        <p className="underline">About</p>
+                    </div>
+                </SidebarGroup>
             </SidebarContent>
             <SidebarFooter />
         </Sidebar>
