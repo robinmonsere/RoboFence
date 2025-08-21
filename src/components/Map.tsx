@@ -2,8 +2,9 @@ import Map, {Source, Layer, AttributionControl, Popup } from 'react-map-gl/mapli
 import 'maplibre-gl/dist/maplibre-gl.css';
 import {useEffect, useMemo, useState, forwardRef, useImperativeHandle, useRef} from "react";
 import type {GeoJson, GeoJsonFeature, MapComponentProps} from "@/types.ts";
+import {Slider} from "@/components/ui/slider.tsx";
 
-const MapComponent = forwardRef(({checkedStates = {}}: MapComponentProps, ref) => {
+const MapComponent = forwardRef(({checkedStates = {}, sliderEnabled = false}: MapComponentProps & { sliderEnabled?: boolean }, ref) => {
     const [geojson, setGeojson] = useState<GeoJson | null>(null);
     const [popupInfo, setPopupInfo] = useState<{ lngLat: {lng: number, lat: number}, feature: GeoJsonFeature } | null>(null);
     const [selectedName, setSelectedName] = useState<string | null>(null);
@@ -97,7 +98,7 @@ const MapComponent = forwardRef(({checkedStates = {}}: MapComponentProps, ref) =
     };
 
     return (
-        <div className="w-full h-screen">
+        <div className="w-full h-screen relative">
             <Map
                 ref={mapRef}
                 initialViewState={{
@@ -173,6 +174,17 @@ const MapComponent = forwardRef(({checkedStates = {}}: MapComponentProps, ref) =
                     margin: '10px',
                 }} customAttribution='<span style="font-weight: bold;">Created and maintained by <a href="https://x.com/xdnibor" target="_blank">@xdnibor</a></span>'  />
             </Map>
+            {sliderEnabled && (
+                <div className="absolute bottom-15 w-100 right-1/2 translate-x-1/2">
+                    <div className="flex flex-row justify-between pb-1 text-gray-950">
+                        <p>Jan 2025</p>
+                        <p>Today</p>
+                    </div>
+                    <Slider className={""} defaultValue={[33]} max={100} step={1} />
+                </div>
+            )}
+
+
         </div>
     );
 });

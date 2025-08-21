@@ -22,6 +22,8 @@ function App() {
         return initial;
     });
 
+    const [sliderEnabled, setSliderEnabled] = useState(false);
+
     const mapRef = useRef<{ flyTo: (lat: number, lng: number, zoom: number) => void }>(null);
 
     const handleZoneLocate = (lat: number, lng: number, zoom: number) => {
@@ -37,13 +39,15 @@ function App() {
                 checkedStates={checkedStates}
                 setCheckedStates={setCheckedStates}
                 onZoneLocate={handleZoneLocate}
+                sliderEnabled={sliderEnabled}
+                setSliderEnabled={setSliderEnabled}
             />
             <main className="relative h-screen w-screen">
                 <div className="absolute top-4 left-4 z-30">
                     <SidebarTrigger id="sidebarTrigger" />
                 </div>
                 <div className="map absolute inset-0 z-10">
-                    <MapComponent ref={mapRef} checkedStates={checkedStates} />  {/* Pass checkedStates to MapComponent */}
+                    <MapComponent ref={mapRef} sliderEnabled={sliderEnabled} checkedStates={checkedStates} />
                 </div>
             </main>
             <Analytics />
