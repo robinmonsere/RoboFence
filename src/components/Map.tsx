@@ -4,15 +4,36 @@ import {useEffect, useMemo, useState, forwardRef, useImperativeHandle, useRef} f
 import type {GeoJson, GeoJsonFeature, MapComponentProps} from "@/types.ts";
 import {Slider} from "@/components/ui/slider.tsx";
 
+function parseDate(str: string): Date | null {
+    const parts = str.split('/');
+    if (parts.length !== 3) return null;
+    const [dayStr, monthStr, yearStr] = parts;
+    const day = parseInt(dayStr, 10);
+    const month = parseInt(monthStr, 10) - 1;
+    const year = parseInt(yearStr, 10);
+    if (isNaN(day) || isNaN(month) || isNaN(year)) return null;
+    return new Date(year, month, day);
+}
+
 const MapComponent = forwardRef(({checkedStates = {}, sliderEnabled = false}: MapComponentProps & { sliderEnabled?: boolean }, ref) => {
     const [geojson, setGeojson] = useState<GeoJson | null>(null);
     const [popupInfo, setPopupInfo] = useState<{ lngLat: {lng: number, lat: number}, feature: GeoJsonFeature } | null>(null);
     const [selectedName, setSelectedName] = useState<string | null>(null);
+    const [sliderValue, setSliderValue] = useState<number>(100);
 
     const companyColors: Record<string, string> = {
         'Tesla': '#E31937',
         'Waymo': '#01eba7',
     };
+
+    const startDate = new Date(2023, 0, 7);
+    const endDate = new Date();
+    endDate.setHours(0, 0, 0, 0);
+    const selectedTime = startDate.getTime() + (sliderValue / 100) * (endDate.getTime() - startDate.getTime());
+    const selectedDate = new Date(selectedTime);
+    selectedDate.setHours(0, 0, 0, 0);
+
+    const formattedDate = `${selectedDate.toLocaleDateString('en-US', { month: 'short' })} ${selectedDate.getDate()} ${selectedDate.getFullYear()}`;
 
     // Expose flyTo method via ref
     const mapRef = useRef<any>(null);
@@ -37,53 +58,105 @@ const MapComponent = forwardRef(({checkedStates = {}, sliderEnabled = false}: Ma
             .catch((error) => console.error('Zones fetch error:', error));
     }, []);
 
-    // Compute grouped and filtered features based on checkedStates
+    // Compute grouped and filtered features based on checkedStates or slider
     const grouped = useMemo(() => {
         if (!geojson || !geojson.features) return {};
 
-        const acc: Record<string, { features: GeoJsonFeature[]; color: string }> = {};
+        if (!sliderEnabled) {
+            const acc: Record<string, { features: GeoJsonFeature[]; color: string }> = {};
 
-        geojson.features.forEach((feature: GeoJsonFeature) => {
-            const name = feature.properties?.name;
-            if (!name) return;
+            geojson.features.forEach((feature: GeoJsonFeature) => {
+                const name = feature.properties?.name;
+                if (!name) return;
 
-            const parts = name.split(' - ').map((s: string) => s.trim());
-            if (parts.length !== 3) return;
+                const parts = name.split(' - ').map((s: string) => s.trim());
+                if (parts.length !== 3) return;
 
-            const [company, zone] = parts;
-            const historyId = feature.id;
-            const companyId = `company-${company}`;
-            const zoneId = `zone-${company}-${zone}`;
+                const [company, zone] = parts;
+                const historyId = feature.id;
+                const companyId = `company-${company}`;
+                const zoneId = `zone-${company}-${zone}`;
 
-            const historyChecked = checkedStates[historyId];
-            const zoneChecked = checkedStates[zoneId];
-            const companyChecked = checkedStates[companyId];
+                const historyChecked = checkedStates[historyId];
+                const zoneChecked = checkedStates[zoneId];
+                const companyChecked = checkedStates[companyId];
 
-            let isChecked: boolean;
-            if (historyChecked !== undefined) {
-                isChecked = historyChecked;
-            } else if (zoneChecked !== undefined) {
-                isChecked = zoneChecked;
-            } else {
-                isChecked = companyChecked ?? false;
-            }
+                let isChecked: boolean;
+                if (historyChecked !== undefined) {
+                    isChecked = historyChecked;
+                } else if (zoneChecked !== undefined) {
+                    isChecked = zoneChecked;
+                } else {
+                    isChecked = companyChecked ?? false;
+                }
 
-            if (!isChecked) return;
+                if (!isChecked) return;
 
-            if (!acc[company]) {
-                acc[company] = { features: [], color: companyColors[company] || '#000000' };
-            }
-            acc[company].features.push(feature);
-        });
+                if (!acc[company]) {
+                    acc[company] = { features: [], color: companyColors[company] || '#000000' };
+                }
+                acc[company].features.push(feature);
+            });
+            return acc;
+        } else {
+            // Slider enabled: group by company and zone, select active history based on date
+            const zonesByCompany: Record<string, Record<string, GeoJsonFeature[]>> = {};
 
-        return acc;
-    }, [geojson, checkedStates, companyColors]);
+            geojson.features.forEach((feature: GeoJsonFeature) => {
+                const name = feature.properties?.name;
+                if (!name) return;
 
+                const parts = name.split(' - ').map((s: string) => s.trim());
+                if (parts.length !== 3) return;
+
+                const [company, zone] = parts;
+
+                if (!zonesByCompany[company]) zonesByCompany[company] = {};
+                if (!zonesByCompany[company][zone]) zonesByCompany[company][zone] = [];
+                zonesByCompany[company][zone].push(feature);
+            });
+
+            const acc: Record<string, { features: GeoJsonFeature[]; color: string }> = {};
+
+            Object.entries(zonesByCompany).forEach(([company, zones]) => {
+                const color = companyColors[company] || '#000000';
+                acc[company] = { features: [], color };
+
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                Object.entries(zones).forEach(([_, histories]) => {
+                    const datedHistories = histories
+                        .map((f) => {
+                            const parts = f.properties.name.split(' - ').map((s) => s.trim());
+                            const dateStr = parts[2];
+                            const startDateParsed = parseDate(dateStr);
+                            return { f, startDate: startDateParsed };
+                        })
+                        .filter((dh): dh is { f: GeoJsonFeature; startDate: Date } => dh.startDate !== null)
+                        .sort((a, b) => a.startDate.getTime() - b.startDate.getTime());
+
+                    if (datedHistories.length === 0) return;
+
+                    for (let i = 0; i < datedHistories.length; i++) {
+                        const isActive =
+                            i < datedHistories.length - 1
+                                ? selectedDate >= datedHistories[i].startDate && selectedDate < datedHistories[i + 1].startDate
+                                : selectedDate >= datedHistories[i].startDate;
+
+                        if (isActive) {
+                            acc[company].features.push(datedHistories[i].f);
+                            break;
+                        }
+                    }
+                });
+            });
+            return acc;
+        }
+
+    }, [geojson, checkedStates, companyColors, sliderEnabled, sliderValue]);
 
     const interactiveLayerIds = useMemo(() => Object.keys(grouped).map(company => `${company.toLowerCase()}-layer`), [grouped]);
 
     const handleMapClick = (e: any) => {
-        console.log('e', e);
         if (e.features && e.features.length > 0) {
             const feature = e.features[0];
             setPopupInfo({ 
@@ -175,12 +248,22 @@ const MapComponent = forwardRef(({checkedStates = {}, sliderEnabled = false}: Ma
                 }} customAttribution='<span style="font-weight: bold;">Created and maintained by <a href="https://x.com/xdnibor" target="_blank">@xdnibor</a></span>'  />
             </Map>
             {sliderEnabled && (
-                <div className="absolute bottom-15 w-100 right-1/2 translate-x-1/2">
-                    <div className="flex flex-row justify-between pb-1 text-gray-950">
-                        <p>Jan 2025</p>
+                <div className="bg-(--card)/50 px-5 pb-5 pt-3 rounded-2xl absolute bottom-15 w-100 right-1/2 translate-x-1/2">
+                    <div className="flex flex-row justify-between items-end pb-2 ">
+                        <p>Jul 2023</p>
+                        <div className="text-center">
+                            <p>Showing zones for date:</p>
+                            <p>{formattedDate}</p>
+                        </div>
                         <p>Today</p>
                     </div>
-                    <Slider className={""} defaultValue={[33]} max={100} step={1} />
+                    <Slider
+                        className={""}
+                        value={[sliderValue]}
+                        onValueChange={(value) => setSliderValue(value[0])}
+                        max={100}
+                        step={1}
+                    />
                 </div>
             )}
 
