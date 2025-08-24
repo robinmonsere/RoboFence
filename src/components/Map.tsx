@@ -248,14 +248,16 @@ const MapComponent = forwardRef(({checkedStates = {}, sliderEnabled = false}: Ma
                 }} customAttribution='<span style="font-weight: bold;">Created and maintained by <a href="https://x.com/xdnibor" target="_blank">@xdnibor</a></span>'  />
             </Map>
             {sliderEnabled && (
-                <div className="bg-(--card)/50 px-5 pb-5 pt-3 rounded-2xl absolute bottom-15 w-100 right-1/2 translate-x-1/2">
-                    <div className="flex flex-row justify-between items-end pb-2 ">
-                        <p>Jul 2023</p>
-                        <div className="text-center">
-                            <p>Showing zones for date:</p>
-                            <p>{formattedDate}</p>
+                <div className="bg-(--card)/50 px-5 pb-5 pt-3 rounded-2xl absolute bottom-15 md:w-100 w-4/5 right-1/2 translate-x-1/2">
+                    <div className="text-center">
+                        <p>Showing zones for date:</p>
+                        <div className="flex flex-row justify-between items-end pb-2 ">
+                            <p>Jul 2023</p>
+                            <div className="text-center">
+                                <p>{formattedDate}</p>
+                            </div>
+                            <p>Today</p>
                         </div>
-                        <p>Today</p>
                     </div>
                     <Slider
                         className={""}
