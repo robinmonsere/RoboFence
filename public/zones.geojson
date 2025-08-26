@@ -227,10 +227,10 @@
       },
       "properties": {
         "name": "Tesla - Austin - 22/06/2025",
-        "styleUrl": "#__managed_style_060B60F08939FC277F18",
+        "styleUrl": "#__managed_style_0E3F914AF33A1C1318D0",
         "styleMapHash": {
-          "normal": "#__managed_style_17F960893B39FC277F18",
-          "highlight": "#__managed_style_244C46E75739FC277F18"
+          "normal": "#__managed_style_17F06AC5A93A1C1318D0",
+          "highlight": "#__managed_style_23715C45A63A1C1318D0"
         },
         "description": "<div><div>Tesla<br></div><div>Start date: 22/06/2025<br></div><div>Status: Inactive<br></div><div><div>Type: Invite only<br></div><div>Area: 18.27 mi²<br></div></div></div>",
         "visibility": "0"
@@ -528,10 +528,10 @@
       },
       "properties": {
         "name": "Tesla - Austin - 14/07/2025",
-        "styleUrl": "#__managed_style_060B60F08939FC277F18",
+        "styleUrl": "#__managed_style_0E3F914AF33A1C1318D0",
         "styleMapHash": {
-          "normal": "#__managed_style_17F960893B39FC277F18",
-          "highlight": "#__managed_style_244C46E75739FC277F18"
+          "normal": "#__managed_style_17F06AC5A93A1C1318D0",
+          "highlight": "#__managed_style_23715C45A63A1C1318D0"
         },
         "description": "<div><div>Tesla<br></div><div>Start date: 14/07/2025<br></div><div>Status: Inactive<br></div><div><div>Type: Invite only<br></div><div>Area: 41.76 mi²<br></div></div></div>",
         "visibility": "0"
@@ -849,14 +849,400 @@
       },
       "properties": {
         "name": "Tesla - Austin - 03/08/2025",
-        "styleUrl": "#__managed_style_060B60F08939FC277F18",
+        "styleUrl": "#__managed_style_0E3F914AF33A1C1318D0",
         "styleMapHash": {
-          "normal": "#__managed_style_17F960893B39FC277F18",
-          "highlight": "#__managed_style_244C46E75739FC277F18"
+          "normal": "#__managed_style_17F06AC5A93A1C1318D0",
+          "highlight": "#__managed_style_23715C45A63A1C1318D0"
         },
-        "description": "<div><div>Tesla<br></div><div>Start date: 03/08/2025<br></div><div>Status: Active<br></div><div><div>Type: Invite only<br></div><div>Area: 90 mi²<br></div></div></div>"
+        "description": "<div><div>Tesla<br></div><div>Start date: 03/08/2025<br></div><div>Status: Active<br></div><div><div>Type: Invite only<br></div><div>Area: 90 mi²<br></div></div></div>",
+        "visibility": "0"
       },
       "id": "0E27867F0C39CD9226D9"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -97.79637194757136,
+              30.36362444534524,
+              0
+            ],
+            [
+              -97.8243064142205,
+              30.33187516325666,
+              0
+            ],
+            [
+              -97.8353106849701,
+              30.29677312652491,
+              0
+            ],
+            [
+              -97.82119693337903,
+              30.26525810248696,
+              0
+            ],
+            [
+              -97.8176603780278,
+              30.26045730722659,
+              0
+            ],
+            [
+              -97.81468561702349,
+              30.25634520420838,
+              0
+            ],
+            [
+              -97.81243815889059,
+              30.25308969040743,
+              0
+            ],
+            [
+              -97.81058752196988,
+              30.25080502321618,
+              0
+            ],
+            [
+              -97.80939778252028,
+              30.24892016509751,
+              0
+            ],
+            [
+              -97.80880302688107,
+              30.24674975402205,
+              0
+            ],
+            [
+              -97.810122725027,
+              30.24486625363497,
+              0
+            ],
+            [
+              -97.81739416573389,
+              30.24149715286663,
+              0
+            ],
+            [
+              -97.82356868793195,
+              30.23884943023597,
+              0
+            ],
+            [
+              -97.83831243517135,
+              30.24386260614133,
+              0
+            ],
+            [
+              -97.84234308868612,
+              30.23706808186471,
+              0
+            ],
+            [
+              -97.8610710642311,
+              30.21268913518017,
+              0
+            ],
+            [
+              -97.86921942761575,
+              30.19976127179188,
+              0
+            ],
+            [
+              -97.85626889662672,
+              30.18602140191911,
+              0
+            ],
+            [
+              -97.82705892220972,
+              30.17264207257925,
+              0
+            ],
+            [
+              -97.76799246471454,
+              30.1516455580055,
+              0
+            ],
+            [
+              -97.75991411214817,
+              30.1487867542718,
+              0
+            ],
+            [
+              -97.75201964850447,
+              30.14608615049643,
+              0
+            ],
+            [
+              -97.74210578292042,
+              30.1435432534502,
+              0
+            ],
+            [
+              -97.73035561169249,
+              30.14211043596713,
+              0
+            ],
+            [
+              -97.69668668984576,
+              30.14258361912582,
+              0
+            ],
+            [
+              -97.6736012806297,
+              30.14395060313187,
+              0
+            ],
+            [
+              -97.65421470689806,
+              30.14516215347851,
+              0
+            ],
+            [
+              -97.56103442947445,
+              30.24838991883956,
+              0
+            ],
+            [
+              -97.56531160460801,
+              30.24796354256649,
+              0
+            ],
+            [
+              -97.56878578019831,
+              30.24846527579616,
+              0
+            ],
+            [
+              -97.5718258089179,
+              30.24859151764777,
+              0
+            ],
+            [
+              -97.57587905761292,
+              30.24884311638357,
+              0
+            ],
+            [
+              -97.58224908595406,
+              30.24734423380542,
+              0
+            ],
+            [
+              -97.58803836483447,
+              30.24959716574093,
+              0
+            ],
+            [
+              -97.59455174646966,
+              30.25109952375789,
+              0
+            ],
+            [
+              -97.59918377541898,
+              30.25110037703168,
+              0
+            ],
+            [
+              -97.60453895564565,
+              30.25385276714454,
+              0
+            ],
+            [
+              -97.61177613159941,
+              30.2571053874183,
+              0
+            ],
+            [
+              -97.61423679958372,
+              30.25898164767504,
+              0
+            ],
+            [
+              -97.61814517764044,
+              30.26060777207669,
+              0
+            ],
+            [
+              -97.62683119178912,
+              30.26873769755855,
+              0
+            ],
+            [
+              -97.62883790103277,
+              30.27007459202469,
+              0
+            ],
+            [
+              -97.63357379414589,
+              30.27215739464087,
+              0
+            ],
+            [
+              -97.63706251537477,
+              30.27711106585684,
+              0
+            ],
+            [
+              -97.6575868768785,
+              30.28436313949656,
+              0
+            ],
+            [
+              -97.66539837287486,
+              30.2855834705952,
+              0
+            ],
+            [
+              -97.669550343785,
+              30.26835546593701,
+              0
+            ],
+            [
+              -97.67461786726278,
+              30.25902366568527,
+              0
+            ],
+            [
+              -97.68006015314695,
+              30.25183772869054,
+              0
+            ],
+            [
+              -97.68863968439125,
+              30.2491368388562,
+              0
+            ],
+            [
+              -97.69006949851007,
+              30.24799253125595,
+              0
+            ],
+            [
+              -97.69186047757076,
+              30.25381198402179,
+              0
+            ],
+            [
+              -97.70455516898427,
+              30.25012837757884,
+              0
+            ],
+            [
+              -97.71348359765058,
+              30.24962403830392,
+              0
+            ],
+            [
+              -97.7084333762373,
+              30.26317337148964,
+              0
+            ],
+            [
+              -97.67761653251671,
+              30.34279521865716,
+              0
+            ],
+            [
+              -97.67733139174706,
+              30.34683000403119,
+              0
+            ],
+            [
+              -97.6780840981236,
+              30.35200197090562,
+              0
+            ],
+            [
+              -97.68096825710855,
+              30.35778287214097,
+              0
+            ],
+            [
+              -97.68588694686237,
+              30.36187150630136,
+              0
+            ],
+            [
+              -97.69536522569668,
+              30.36611490785416,
+              0
+            ],
+            [
+              -97.70208419762649,
+              30.36663170009063,
+              0
+            ],
+            [
+              -97.70848118279001,
+              30.36548178523359,
+              0
+            ],
+            [
+              -97.7173992357734,
+              30.36198727452187,
+              0
+            ],
+            [
+              -97.71882687429446,
+              30.36866046746881,
+              0
+            ],
+            [
+              -97.72273822903833,
+              30.37086190114306,
+              0
+            ],
+            [
+              -97.73774631267813,
+              30.37916699816123,
+              0
+            ],
+            [
+              -97.74402140879712,
+              30.38755534144899,
+              0
+            ],
+            [
+              -97.74554522311693,
+              30.39054958106016,
+              0
+            ],
+            [
+              -97.74645523560218,
+              30.39349518427467,
+              0
+            ],
+            [
+              -97.76283803493874,
+              30.38884880749004,
+              0
+            ],
+            [
+              -97.77917456230129,
+              30.38383819608872,
+              0
+            ],
+            [
+              -97.79637194757136,
+              30.36362444534524,
+              0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Tesla - Austin - 26/08/2025",
+        "styleUrl": "#__managed_style_0E3F914AF33A1C1318D0",
+        "styleMapHash": {
+          "normal": "#__managed_style_17F06AC5A93A1C1318D0",
+          "highlight": "#__managed_style_23715C45A63A1C1318D0"
+        },
+        "description": "<div><div>Tesla<br></div><div>Start date: 26/08/2025<br></div><div>Status: Active<br></div><div><div>Type: Invite only<br></div><div>Area:&nbsp;171.46 mi²<br></div></div></div><div><br></div>"
+      },
+      "id": "08B03BABA23A1C136CCC"
     },
     {
       "type": "Feature",
@@ -1039,10 +1425,10 @@
       },
       "properties": {
         "name": "Tesla - San Francisco - 31/07/2025",
-        "styleUrl": "#__managed_style_3A6A85CA1A39FC277F18",
+        "styleUrl": "#__managed_style_30AB41FB0A3A1C1318D0",
         "styleMapHash": {
-          "normal": "#__managed_style_4D88F121BF39FC277F18",
-          "highlight": "#__managed_style_592B4603CD39FC277F18"
+          "normal": "#__managed_style_4CFA87C22C3A1C1318D0",
+          "highlight": "#__managed_style_588B0F75753A1C1318D0"
         },
         "description": "<div><div>Tesla<br></div><div>Start date: 31/07/2025<br></div><div>Status: Active<br></div><div><div>Type: Invite only<br></div><div>Area: 995.15 mi²<br></div></div></div>",
         "visibility": "0"
@@ -1740,10 +2126,10 @@
       },
       "properties": {
         "name": "Waymo - Austin - 17/07/2025",
-        "styleUrl": "#__managed_style_0D2254DD4F39FC277F19",
+        "styleUrl": "#__managed_style_00CCD24A833A1C1318D1",
         "styleMapHash": {
-          "normal": "#__managed_style_1F8DB46F1B39FC277F19",
-          "highlight": "#__managed_style_2427AA872A39FC277F19"
+          "normal": "#__managed_style_1DC4B578543A1C1318D1",
+          "highlight": "#__managed_style_2328F76C2C3A1C1318D1"
         },
         "description": "<div><div>Waymo<br></div><div>Start date: 17/07/2025<br></div><div>Status: Active<br></div><div><div>Type: Open (Uber)<br></div><div>Area: 88.58 mi²<br></div></div></div>",
         "visibility": "0"
@@ -2131,12 +2517,13 @@
       },
       "properties": {
         "name": "Waymo - Austin - 04/03/2025",
-        "styleUrl": "#__managed_style_0D2254DD4F39FC277F19",
+        "styleUrl": "#__managed_style_00CCD24A833A1C1318D1",
         "styleMapHash": {
-          "normal": "#__managed_style_1F8DB46F1B39FC277F19",
-          "highlight": "#__managed_style_2427AA872A39FC277F19"
+          "normal": "#__managed_style_1DC4B578543A1C1318D1",
+          "highlight": "#__managed_style_2328F76C2C3A1C1318D1"
         },
-        "description": "<div><div>Waymo<br></div><div>Start date: 04/03/2025<br></div><div>Status: Inactive<br></div><div><div>Type: Open (Uber)<br></div><div>Area: 35.34 mi²<br></div></div></div>"
+        "description": "<div><div>Waymo<br></div><div>Start date: 04/03/2025<br></div><div>Status: Inactive<br></div><div><div>Type: Open (Uber)<br></div><div>Area: 35.34 mi²<br></div></div></div>",
+        "visibility": "0"
       },
       "id": "0DD54A8F3038CE82AA70"
     },
@@ -3066,10 +3453,10 @@
       },
       "properties": {
         "name": "Waymo - Atlanta - 24/06/2025",
-        "styleUrl": "#__managed_style_0D2254DD4F39FC277F19",
+        "styleUrl": "#__managed_style_00CCD24A833A1C1318D1",
         "styleMapHash": {
-          "normal": "#__managed_style_1F8DB46F1B39FC277F19",
-          "highlight": "#__managed_style_2427AA872A39FC277F19"
+          "normal": "#__managed_style_1DC4B578543A1C1318D1",
+          "highlight": "#__managed_style_2328F76C2C3A1C1318D1"
         },
         "description": "<div>Waymo<br></div><div>Start date: 24/06/2025<br></div><div>Status: Active<br></div><div>Type: Open (Uber)<br></div><div>Area:&nbsp;61.18 mi²<br></div>"
       },
@@ -3611,13 +3998,12 @@
       },
       "properties": {
         "name": "Waymo - Phoenix - 05/07/2023",
-        "styleUrl": "#__managed_style_0D2254DD4F39FC277F19",
+        "styleUrl": "#__managed_style_00CCD24A833A1C1318D1",
         "styleMapHash": {
-          "normal": "#__managed_style_1F8DB46F1B39FC277F19",
-          "highlight": "#__managed_style_2427AA872A39FC277F19"
+          "normal": "#__managed_style_1DC4B578543A1C1318D1",
+          "highlight": "#__managed_style_2328F76C2C3A1C1318D1"
         },
-        "description": "<div>Waymo<br></div><div>Start date: 05/07/2023<br></div><div>Status: Inactive<br></div><div>Type: Invite<br></div><div>Area: 216.56 mi²<br></div>",
-        "visibility": "0"
+        "description": "<div>Waymo<br></div><div>Start date: 05/07/2023<br></div><div>Status: Inactive<br></div><div>Type: Invite<br></div><div>Area: 216.56 mi²<br></div>"
       },
       "id": "56BD7228AA000003"
     },
@@ -4292,10 +4678,10 @@
       },
       "properties": {
         "name": "Waymo - Phoenix - 05/06/2024",
-        "styleUrl": "#__managed_style_0D2254DD4F39FC277F19",
+        "styleUrl": "#__managed_style_00CCD24A833A1C1318D1",
         "styleMapHash": {
-          "normal": "#__managed_style_1F8DB46F1B39FC277F19",
-          "highlight": "#__managed_style_2427AA872A39FC277F19"
+          "normal": "#__managed_style_1DC4B578543A1C1318D1",
+          "highlight": "#__managed_style_2328F76C2C3A1C1318D1"
         },
         "description": "<div>Waymo<br></div><div>Start date: 05/06/2024<br></div><div>Status: Active<br></div><div>Type: Invite<br></div><div>Area: 301.67 mi²<br></div>"
       },
@@ -5282,10 +5668,10 @@
       },
       "properties": {
         "name": "Waymo - Silicon Valley - 17/07/2025",
-        "styleUrl": "#__managed_style_0D2254DD4F39FC277F19",
+        "styleUrl": "#__managed_style_00CCD24A833A1C1318D1",
         "styleMapHash": {
-          "normal": "#__managed_style_1F8DB46F1B39FC277F19",
-          "highlight": "#__managed_style_2427AA872A39FC277F19"
+          "normal": "#__managed_style_1DC4B578543A1C1318D1",
+          "highlight": "#__managed_style_2328F76C2C3A1C1318D1"
         },
         "description": "<div>Waymo<br></div><div>Start date: 17/07/2027<br></div><div>Status: Active<br></div><div>Type: Invite<br></div><div>Area: 51.45 mi²<br></div>"
       },
@@ -6652,10 +7038,10 @@
       },
       "properties": {
         "name": "Waymo - San Francisco - 17/07/2025",
-        "styleUrl": "#__managed_style_0D2254DD4F39FC277F19",
+        "styleUrl": "#__managed_style_00CCD24A833A1C1318D1",
         "styleMapHash": {
-          "normal": "#__managed_style_1F8DB46F1B39FC277F19",
-          "highlight": "#__managed_style_2427AA872A39FC277F19"
+          "normal": "#__managed_style_1DC4B578543A1C1318D1",
+          "highlight": "#__managed_style_2328F76C2C3A1C1318D1"
         },
         "description": "<div>Waymo<br></div><div>Start date: 17/07/2027<br></div><div>Status: Active<br></div><div>Type: Open<br></div><div>Area: 81.33 mi²<br></div>"
       },
@@ -8022,10 +8408,10 @@
       },
       "properties": {
         "name": "Waymo - Los Angeles - 17/06/2025",
-        "styleUrl": "#__managed_style_0D2254DD4F39FC277F19",
+        "styleUrl": "#__managed_style_00CCD24A833A1C1318D1",
         "styleMapHash": {
-          "normal": "#__managed_style_1F8DB46F1B39FC277F19",
-          "highlight": "#__managed_style_2427AA872A39FC277F19"
+          "normal": "#__managed_style_1DC4B578543A1C1318D1",
+          "highlight": "#__managed_style_2328F76C2C3A1C1318D1"
         },
         "description": "<div>Waymo<br></div><div>Start date: 17/07/2027<br></div><div>Status: Active<br></div><div>Type: Open<br></div><div>Area: 122.34 mi²<br></div>"
       },
