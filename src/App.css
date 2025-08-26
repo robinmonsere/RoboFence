@@ -25,3 +25,16 @@
     font-size: 18px;
 }
 
+.maplibregl-ctrl.maplibregl-ctrl-attrib.maplibregl-compact {
+    padding: 0 !important;
+}
+
+.maplibregl-ctrl.maplibregl-ctrl-attrib.maplibregl-compact.maplibregl-compact-show {
+    padding: 5px 28px 5px 8px !important;
+    border-radius: 15px !important;
+}
+
+.maplibregl-compact-show summary.maplibregl-ctrl-attrib-button {
+    top: 25% !important;
+    right: 5px !important;
+}
