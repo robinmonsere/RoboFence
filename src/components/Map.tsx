@@ -24,7 +24,7 @@ const MapComponent = forwardRef(({checkedStates = {}, sliderEnabled = false}: Ma
     const companyColors: Record<string, string> = {
         'Tesla': '#E31937',
         'Waymo': '#01eba7',
-        'Zoox': '#394c4e',
+        'Zoox': '#1c8566',
     };
 
     const startDate = new Date(2023, 0, 7);
