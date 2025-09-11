@@ -70,6 +70,13 @@ const coords = {
             lng: -122.0575,
             zoom: 10
         }
+    },
+    Zoox: {
+        Las_Vegas: {
+            lat: 36.1238,
+            lng: -115.1806,
+            zoom: 10
+        }
     }
 }
 

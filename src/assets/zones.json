@@ -177,6 +177,27 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Zoox",
+      "zones": [
+        {
+          "name": "Las Vegas",
+          "lat": 36.1238,
+          "lng": -115.1806,
+          "zoom": 10,
+          "history": [
+            {
+              "name": "Las Vegas September 11, 2025",
+              "id": "0D718F53B13A6EC46D37",
+              "date": "2025-09-11",
+              "status": "Active",
+              "type": "Invite only",
+              "area": "&nbsp;12.03 mi²"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
