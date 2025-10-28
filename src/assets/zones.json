@@ -10,6 +10,14 @@
           "zoom": 10,
           "history": [
             {
+              "name": "Austin October 29, 2025",
+              "id": "0443FFDF1B3B628336E9",
+              "date": "2025-10-29",
+              "status": "Active",
+              "type": "Invite only",
+              "area": "&nbsp;242.21 mi²"
+            },
+            {
               "name": "Austin August 26, 2025",
               "id": "08B03BABA23A1C136CCC",
               "date": "2025-08-26",
@@ -191,9 +199,9 @@
               "name": "Las Vegas September 11, 2025",
               "id": "0D718F53B13A6EC46D37",
               "date": "2025-09-11",
-              "status": "Active",
-              "type": "Open",
-              "area": "12.03 mi²"
+              "status": "",
+              "type": "",
+              "area": ""
             }
           ]
         }

@@ -227,10 +227,10 @@
       },
       "properties": {
         "name": "Tesla - Austin - 22/06/2025",
-        "styleUrl": "#__managed_style_05F96B97263A6EBEA2A4",
+        "styleUrl": "#__managed_style_0B49C5B5FD3B627BD083",
         "styleMapHash": {
-          "normal": "#__managed_style_1AB97B6ED53A6EBEA2A4",
-          "highlight": "#__managed_style_20B21407A53A6EBEA2A4"
+          "normal": "#__managed_style_1F795C7CA53B627BD083",
+          "highlight": "#__managed_style_2CA5962BFD3B627BD083"
         },
         "description": "<div><div>Tesla<br></div><div>Start date: 22/06/2025<br></div><div>Status: Inactive<br></div><div><div>Type: Invite only<br></div><div>Area: 18.27 mi²<br></div></div></div>",
         "visibility": "0"
@@ -528,10 +528,10 @@
       },
       "properties": {
         "name": "Tesla - Austin - 14/07/2025",
-        "styleUrl": "#__managed_style_05F96B97263A6EBEA2A4",
+        "styleUrl": "#__managed_style_0B49C5B5FD3B627BD083",
         "styleMapHash": {
-          "normal": "#__managed_style_1AB97B6ED53A6EBEA2A4",
-          "highlight": "#__managed_style_20B21407A53A6EBEA2A4"
+          "normal": "#__managed_style_1F795C7CA53B627BD083",
+          "highlight": "#__managed_style_2CA5962BFD3B627BD083"
         },
         "description": "<div><div>Tesla<br></div><div>Start date: 14/07/2025<br></div><div>Status: Inactive<br></div><div><div>Type: Invite only<br></div><div>Area: 41.76 mi²<br></div></div></div>",
         "visibility": "0"
@@ -849,10 +849,10 @@
       },
       "properties": {
         "name": "Tesla - Austin - 03/08/2025",
-        "styleUrl": "#__managed_style_05F96B97263A6EBEA2A4",
+        "styleUrl": "#__managed_style_0B49C5B5FD3B627BD083",
         "styleMapHash": {
-          "normal": "#__managed_style_1AB97B6ED53A6EBEA2A4",
-          "highlight": "#__managed_style_20B21407A53A6EBEA2A4"
+          "normal": "#__managed_style_1F795C7CA53B627BD083",
+          "highlight": "#__managed_style_2CA5962BFD3B627BD083"
         },
         "description": "<div><div>Tesla<br></div><div>Start date: 03/08/2025<br></div><div>Status: Active<br></div><div><div>Type: Invite only<br></div><div>Area: 90 mi²<br></div></div></div>",
         "visibility": "0"
@@ -1235,14 +1235,159 @@
       },
       "properties": {
         "name": "Tesla - Austin - 26/08/2025",
-        "styleUrl": "#__managed_style_05F96B97263A6EBEA2A4",
+        "styleUrl": "#__managed_style_0B49C5B5FD3B627BD083",
         "styleMapHash": {
-          "normal": "#__managed_style_1AB97B6ED53A6EBEA2A4",
-          "highlight": "#__managed_style_20B21407A53A6EBEA2A4"
+          "normal": "#__managed_style_1F795C7CA53B627BD083",
+          "highlight": "#__managed_style_2CA5962BFD3B627BD083"
         },
         "description": "<div><div>Tesla<br></div><div>Start date: 26/08/2025<br></div><div>Status: Active<br></div><div><div>Type: Invite only<br></div><div>Area:&nbsp;171.46 mi²<br></div></div></div><div><br></div>"
       },
       "id": "08B03BABA23A1C136CCC"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -97.86922477910647,
+              30.19976087302204,
+              0
+            ],
+            [
+              -97.85645969215507,
+              30.18606015857894,
+              0
+            ],
+            [
+              -97.82702758942044,
+              30.17247383186402,
+              0
+            ],
+            [
+              -97.75282130025302,
+              30.14628190730979,
+              0
+            ],
+            [
+              -97.74251803642912,
+              30.1434598631038,
+              0
+            ],
+            [
+              -97.73053126402657,
+              30.14190872631576,
+              0
+            ],
+            [
+              -97.65447982563364,
+              30.14489945677808,
+              0
+            ],
+            [
+              -97.55543011041033,
+              30.25663618811644,
+              0
+            ],
+            [
+              -97.57920807377516,
+              30.34709898785844,
+              0
+            ],
+            [
+              -97.65342843248779,
+              30.40217818132436,
+              0
+            ],
+            [
+              -97.70541810629314,
+              30.42253549924178,
+              0
+            ],
+            [
+              -97.73340174835319,
+              30.40107171514127,
+              0
+            ],
+            [
+              -97.74639784236136,
+              30.39385212186535,
+              0
+            ],
+            [
+              -97.7793354353793,
+              30.38363531207406,
+              0
+            ],
+            [
+              -97.8243678363327,
+              30.33177210368148,
+              0
+            ],
+            [
+              -97.83541651890967,
+              30.29605171710655,
+              0
+            ],
+            [
+              -97.82051044592096,
+              30.26462274301854,
+              0
+            ],
+            [
+              -97.80943185545684,
+              30.24896333349913,
+              0
+            ],
+            [
+              -97.80882124924292,
+              30.2467427781578,
+              0
+            ],
+            [
+              -97.81011361771303,
+              30.24486576239663,
+              0
+            ],
+            [
+              -97.82360940082064,
+              30.23887045632157,
+              0
+            ],
+            [
+              -97.83829022554428,
+              30.24389325008444,
+              0
+            ],
+            [
+              -97.84333701605145,
+              30.23586290132643,
+              0
+            ],
+            [
+              -97.8616219003782,
+              30.21170837513712,
+              0
+            ],
+            [
+              -97.86922477910647,
+              30.19976087302204,
+              0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Tesla - Austin - 29/10/2025",
+        "styleUrl": "#__managed_style_0B49C5B5FD3B627BD083",
+        "styleMapHash": {
+          "normal": "#__managed_style_1F795C7CA53B627BD083",
+          "highlight": "#__managed_style_2CA5962BFD3B627BD083"
+        },
+        "description": "<div><div>Tesla<br></div><div>Start date: 29/10/2025<br></div><div>Status: Active<br></div><div><div>Type: Invite only<br></div><div>Area:&nbsp;242.21 mi²<br></div></div></div><div><br></div>"
+      },
+      "id": "0443FFDF1B3B628336E9"
     },
     {
       "type": "Feature",
@@ -1425,10 +1570,10 @@
       },
       "properties": {
         "name": "Tesla - San Francisco - 31/07/2025",
-        "styleUrl": "#__managed_style_339E7EB1773A6EBEA2A4",
+        "styleUrl": "#__managed_style_0D65BD28C23B627BD084",
         "styleMapHash": {
-          "normal": "#__managed_style_4751B711D53A6EBEA2A4",
-          "highlight": "#__managed_style_5EDAE3FF083A6EBEA2A4"
+          "normal": "#__managed_style_15A379C8C43B627BD084",
+          "highlight": "#__managed_style_21ED5DD95B3B627BD084"
         },
         "description": "<div><div>Tesla<br></div><div>Start date: 31/07/2025<br></div><div>Status: Active<br></div><div><div>Type: Invite only<br></div><div>Area: 995.15 mi²<br></div></div></div>"
       },
@@ -1815,10 +1960,10 @@
       },
       "properties": {
         "name": "Waymo - Austin - 04/03/2025",
-        "styleUrl": "#__managed_style_66226C3E713A6EBEA2A4",
+        "styleUrl": "#__managed_style_35D63759BE3B627BD084",
         "styleMapHash": {
-          "normal": "#__managed_style_7E704C64B03A6EBEA2A4",
-          "highlight": "#__managed_style_847AF3F6103A6EBEA2A4"
+          "normal": "#__managed_style_4D2BE4FC613B627BD084",
+          "highlight": "#__managed_style_504E7CAEA13B627BD084"
         },
         "description": "<div><div>Waymo<br></div><div>Start date: 04/03/2025<br></div><div>Status: Inactive<br></div><div><div>Type: Open (Uber)<br></div><div>Area: 35.34 mi²<br></div></div></div>",
         "visibility": "0"
@@ -2516,10 +2661,10 @@
       },
       "properties": {
         "name": "Waymo - Austin - 17/07/2025",
-        "styleUrl": "#__managed_style_66226C3E713A6EBEA2A4",
+        "styleUrl": "#__managed_style_35D63759BE3B627BD084",
         "styleMapHash": {
-          "normal": "#__managed_style_7E704C64B03A6EBEA2A4",
-          "highlight": "#__managed_style_847AF3F6103A6EBEA2A4"
+          "normal": "#__managed_style_4D2BE4FC613B627BD084",
+          "highlight": "#__managed_style_504E7CAEA13B627BD084"
         },
         "description": "<div><div>Waymo<br></div><div>Start date: 17/07/2025<br></div><div>Status: Active<br></div><div><div>Type: Open (Uber)<br></div><div>Area: 88.58 mi²<br></div></div></div>",
         "visibility": "0"
@@ -3452,10 +3597,10 @@
       },
       "properties": {
         "name": "Waymo - Atlanta - 24/06/2025",
-        "styleUrl": "#__managed_style_66226C3E713A6EBEA2A4",
+        "styleUrl": "#__managed_style_35D63759BE3B627BD084",
         "styleMapHash": {
-          "normal": "#__managed_style_7E704C64B03A6EBEA2A4",
-          "highlight": "#__managed_style_847AF3F6103A6EBEA2A4"
+          "normal": "#__managed_style_4D2BE4FC613B627BD084",
+          "highlight": "#__managed_style_504E7CAEA13B627BD084"
         },
         "description": "<div>Waymo<br></div><div>Start date: 24/06/2025<br></div><div>Status: Active<br></div><div>Type: Open (Uber)<br></div><div>Area:&nbsp;61.18 mi²<br></div>"
       },
@@ -3997,10 +4142,10 @@
       },
       "properties": {
         "name": "Waymo - Phoenix - 05/07/2023",
-        "styleUrl": "#__managed_style_66226C3E713A6EBEA2A4",
+        "styleUrl": "#__managed_style_35D63759BE3B627BD084",
         "styleMapHash": {
-          "normal": "#__managed_style_7E704C64B03A6EBEA2A4",
-          "highlight": "#__managed_style_847AF3F6103A6EBEA2A4"
+          "normal": "#__managed_style_4D2BE4FC613B627BD084",
+          "highlight": "#__managed_style_504E7CAEA13B627BD084"
         },
         "description": "<div>Waymo<br></div><div>Start date: 05/07/2023<br></div><div>Status: Inactive<br></div><div>Type: Invite<br></div><div>Area: 216.56 mi²<br></div>",
         "visibility": "0"
@@ -4678,10 +4823,10 @@
       },
       "properties": {
         "name": "Waymo - Phoenix - 05/06/2024",
-        "styleUrl": "#__managed_style_66226C3E713A6EBEA2A4",
+        "styleUrl": "#__managed_style_35D63759BE3B627BD084",
         "styleMapHash": {
-          "normal": "#__managed_style_7E704C64B03A6EBEA2A4",
-          "highlight": "#__managed_style_847AF3F6103A6EBEA2A4"
+          "normal": "#__managed_style_4D2BE4FC613B627BD084",
+          "highlight": "#__managed_style_504E7CAEA13B627BD084"
         },
         "description": "<div>Waymo<br></div><div>Start date: 05/06/2024<br></div><div>Status: Active<br></div><div>Type: Invite<br></div><div>Area: 301.67 mi²<br></div>"
       },
@@ -5668,10 +5813,10 @@
       },
       "properties": {
         "name": "Waymo - Silicon Valley - 17/07/2025",
-        "styleUrl": "#__managed_style_66226C3E713A6EBEA2A4",
+        "styleUrl": "#__managed_style_35D63759BE3B627BD084",
         "styleMapHash": {
-          "normal": "#__managed_style_7E704C64B03A6EBEA2A4",
-          "highlight": "#__managed_style_847AF3F6103A6EBEA2A4"
+          "normal": "#__managed_style_4D2BE4FC613B627BD084",
+          "highlight": "#__managed_style_504E7CAEA13B627BD084"
         },
         "description": "<div>Waymo<br></div><div>Start date: 17/07/2027<br></div><div>Status: Active<br></div><div>Type: Invite<br></div><div>Area: 51.45 mi²<br></div>"
       },
@@ -7038,10 +7183,10 @@
       },
       "properties": {
         "name": "Waymo - San Francisco - 17/07/2025",
-        "styleUrl": "#__managed_style_66226C3E713A6EBEA2A4",
+        "styleUrl": "#__managed_style_35D63759BE3B627BD084",
         "styleMapHash": {
-          "normal": "#__managed_style_7E704C64B03A6EBEA2A4",
-          "highlight": "#__managed_style_847AF3F6103A6EBEA2A4"
+          "normal": "#__managed_style_4D2BE4FC613B627BD084",
+          "highlight": "#__managed_style_504E7CAEA13B627BD084"
         },
         "description": "<div>Waymo<br></div><div>Start date: 17/07/2027<br></div><div>Status: Active<br></div><div>Type: Open<br></div><div>Area: 81.33 mi²<br></div>"
       },
@@ -8408,10 +8553,10 @@
       },
       "properties": {
         "name": "Waymo - Los Angeles - 17/06/2025",
-        "styleUrl": "#__managed_style_66226C3E713A6EBEA2A4",
+        "styleUrl": "#__managed_style_35D63759BE3B627BD084",
         "styleMapHash": {
-          "normal": "#__managed_style_7E704C64B03A6EBEA2A4",
-          "highlight": "#__managed_style_847AF3F6103A6EBEA2A4"
+          "normal": "#__managed_style_4D2BE4FC613B627BD084",
+          "highlight": "#__managed_style_504E7CAEA13B627BD084"
         },
         "description": "<div>Waymo<br></div><div>Start date: 17/07/2025<br></div><div>Status: Active<br></div><div>Type: Open<br></div><div>Area: 122.34 mi²<br></div>"
       },
@@ -8748,12 +8893,11 @@
       },
       "properties": {
         "name": "Zoox - Las Vegas - 11/09/2025",
-        "styleUrl": "#__managed_style_006657C3043A6EC61416",
+        "styleUrl": "#__managed_style_0E65F90DF13B627BD089",
         "styleMapHash": {
-          "normal": "#__managed_style_1F97196F0D3A6EC61416",
-          "highlight": "#__managed_style_27C43131733A6EC61416"
-        },
-        "description": "<div>Zoox<br></div><div>Start date: 10/09/2025<br></div><div>Status: Active<br></div><div>Type: Open<br></div><div>Area:&nbsp;12.03 mi²<br></div>"
+          "normal": "#__managed_style_1360C17F033B627BD089",
+          "highlight": "#__managed_style_2DB34A96293B627BD089"
+        }
       },
       "id": "0D718F53B13A6EC46D37"
     }
